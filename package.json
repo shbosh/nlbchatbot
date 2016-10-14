@@ -1,0 +1,33 @@
+{
+  "name": "siaconcierge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shbosh/siaconcierge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shbosh/siaconcierge/issues"
+  },
+  "homepage": "https://github.com/shbosh/siaconcierge#readme",
+  "dependencies": {
+    "airport-codes": "^1.0.2",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "julian-date": "^1.0.1",
+    "moment": "^2.15.1",
+    "node-fetch": "^1.6.3",
+    "node-wit": "^4.1.0",
+    "qrcode-reader": "^0.2.2",
+    "request": "^2.75.0"
+  }
+}
