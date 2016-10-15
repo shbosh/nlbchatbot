@@ -38,7 +38,7 @@ app.get('/webhook', function (req, res) {
 app.post('/webhook', function (req, res) {
 
   var entry = FB.getMessageEntry(req.body)
-  IS THE ENTRY A VALID MESSAGE?
+  //IS THE ENTRY A VALID MESSAGE?
   if (entry && entry.message) {
     if (entry.message.attachments) {
 
@@ -61,8 +61,8 @@ app.post('/webhook', function (req, res) {
       SEND TO BOT FOR PROCESSING, WIT.AI SENDS POST REQ, NOT SERVER
       see ./bot.js
       Bot.read(entry.sender.id, entry.message.text)
-    // }
-  // }
+    }
+  }
   res.sendStatus(200)
 })
 
