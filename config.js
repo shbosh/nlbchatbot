@@ -12,15 +12,15 @@ if (!FB_PAGE_TOKEN) {
 }
 
 const FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN
-const FB_PAGE_ID = process.env.FB_PAGE_ID || '313103322397034'
-const OPEN_WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY
-const DASHBOARD_URL = process.env.DASHBOARD_URL || 'https://sia-dash.herokuapp.com'
+const FB_PAGE_ID = process.env.FB_PAGE_ID || '1192127420842165'
+// const OPEN_WEATHER_API_KEY = process.env.OPEN_WEATHER_API_KEY
+// const DASHBOARD_URL = process.env.DASHBOARD_URL || 'https://sia-dash.herokuapp.com'
 
 module.exports = {
   WIT_TOKEN,
-  OPEN_WEATHER_API_KEY,
+  // OPEN_WEATHER_API_KEY,
   FB_PAGE_ID,
   FB_PAGE_TOKEN,
   FB_VERIFY_TOKEN,
-  DASHBOARD_URL
+  // DASHBOARD_URL
 }
