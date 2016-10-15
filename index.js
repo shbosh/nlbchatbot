@@ -58,8 +58,8 @@ app.post('/webhook', function (req, res) {
       })
 
     } else {
-      SEND TO BOT FOR PROCESSING, WIT.AI SENDS POST REQ, NOT SERVER
-      see ./bot.js
+      //SEND TO BOT FOR PROCESSING, WIT.AI SENDS POST REQ, NOT SERVER
+      // see ./bot.js
       Bot.read(entry.sender.id, entry.message.text)
     }
   }
