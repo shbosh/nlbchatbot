@@ -62,10 +62,10 @@ app.post('/webhook', function (req, res) {
       // see ./bot.js
       Bot.read(entry.sender.id, entry.message.text)
     // }
-  }
-
+  // }
   res.sendStatus(200)
 })
+
 app.use(bodyParser.urlencoded({extended : false}));
 app.post('/api/announce', (req, res) => {
   console.log('announceMsg', req.query);
@@ -75,7 +75,7 @@ app.post('/api/announce', (req, res) => {
   res.end();
 })
 
-var https = require("https");
-setInterval(function() {
-    https.get("https://afternoon-everglades-21984.herokuapp.com");
-}, 1800000); // every 5 minutes (300000)
+// var https = require("https");
+// setInterval(function() {
+//     https.get("https://afternoon-everglades-21984.herokuapp.com");
+// }, 1800000); // every 5 minutes (300000)
