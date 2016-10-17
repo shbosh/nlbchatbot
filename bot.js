@@ -85,13 +85,13 @@ var read = function (sender, message, passengerData, announceMsg) {
   // else {
   //
   // 	// Let's find or create a session for the user
-  //   var sessionId = findOrCreateSession(sender, passengerData)
-  //   if(!sessionId){
-  //     const reply = 'Hi there, how may I help you today?'
-  //     FB.newMessage(sender, reply)
-  //     .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
-  //     return;
-  //   }
+    var sessionId = findOrCreateSession(sender, passengerData)
+    if(!sessionId){
+      const reply = 'Hi there, how may I help you today?'
+      FB.newMessage(sender, reply)
+      .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
+      return;
+    }
 
   		// Wit.ai bot engine reads - then runs all actions incl send (as in wit.ai story) until no more
       // See ./services/wit.js, params in runActions below are available in methods
