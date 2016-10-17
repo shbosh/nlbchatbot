@@ -39,29 +39,29 @@ app.post('/webhook', function (req, res) {
 
   var entry = FB.getMessageEntry(req.body)
   //IS THE ENTRY A VALID MESSAGE?
-  if (entry && entry.message) {
-    if (entry.message.attachments) {
+  if (entry) {
+    // if (entry.message.attachments) {
 
-      // GET IMAGE OF QR CODE & DECODE
-      const imageUrl = entry.message.attachments[0].payload.url;
-
-      QR.decode(imageUrl).then(psgr => {
-        Bot.read(entry.sender.id, null, psgr)
-
-        const reply = `Hello ${psgr.fullName}, are you taking ${psgr.airline} (${psgr.airlineCode + ' ' + psgr.flightNum}, Booking Ref: ${psgr.bookingRef}) from ${psgr.from} to ${psgr.to}? `
-        const quickreplies =[
-          {"content_type":"text","title":"Yes, that is me","payload":"Yes, that's me"},
-          {"content_type":"text","title":"No, that is not me.","payload":"No."}
-        ]
-
-        FB.newMessage(entry.sender.id, reply, null, quickreplies)
-      })
-
-    } else {
-      //SEND TO BOT FOR PROCESSING, WIT.AI SENDS POST REQ, NOT SERVER
-      // see ./bot.js
+    //   // GET IMAGE OF QR CODE & DECODE
+    //   const imageUrl = entry.message.attachments[0].payload.url;
+    //
+    //   QR.decode(imageUrl).then(psgr => {
+    //     Bot.read(entry.sender.id, null, psgr)
+    //
+    //     const reply = `Hello ${psgr.fullName}, are you taking ${psgr.airline} (${psgr.airlineCode + ' ' + psgr.flightNum}, Booking Ref: ${psgr.bookingRef}) from ${psgr.from} to ${psgr.to}? `
+    //     const quickreplies =[
+    //       {"content_type":"text","title":"Yes, that is me","payload":"Yes, that's me"},
+    //       {"content_type":"text","title":"No, that is not me.","payload":"No."}
+    //     ]
+    //
+    //     FB.newMessage(entry.sender.id, reply, null, quickreplies)
+    //   })
+    //
+    // } else {
+    //   //SEND TO BOT FOR PROCESSING, WIT.AI SENDS POST REQ, NOT SERVER
+    //   // see ./bot.js
       Bot.read(entry.sender.id, entry.message.text)
-    }
+    // }
   }
   res.sendStatus(200)
 })
