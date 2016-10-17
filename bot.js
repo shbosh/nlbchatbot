@@ -103,7 +103,7 @@ var read = function (sender, message, passengerData, announceMsg) {
   		)
       // End story for now - don't update context with callbacks
       .then(context => {
-  				Wit.ai ran all the actions in cycle, now it needs more messages
+  				// Wit.ai ran all the actions in cycle, now it needs more messages
   				console.log('Waiting for further messages')
 
   				// Based on the session state, you might want to reset the session
