@@ -86,12 +86,12 @@ var read = function (sender, message, passengerData, announceMsg) {
   //
   // 	// Let's find or create a session for the user
     var sessionId = findOrCreateSession(sender, passengerData)
-    // if(!sessionId){
-    //   const reply = 'Hi there, how may I help you today?'
-    //   FB.newMessage(sender, reply)
-    //   .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
-    //   return;
-    // }
+    if(!sessionId){
+      const reply = 'Hi there, how may I help you today?'
+      FB.newMessage(sender, reply)
+      .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
+      return;
+    }
 
   		// Wit.ai bot engine reads - then runs all actions incl send (as in wit.ai story) until no more
       // See ./services/wit.js, params in runActions below are available in methods
@@ -102,9 +102,9 @@ var read = function (sender, message, passengerData, announceMsg) {
   			// sessions[sessionId].context  // :context:, the user's session state
   		)
       // End story for now - don't update context with callbacks
-      // .then(context => {
-  				// Wit.ai ran all the actions in cycle, now it needs more messages
-  				// console.log('Waiting for further messages')
+      .then(context => {
+  				Wit.ai ran all the actions in cycle, now it needs more messages
+  				console.log('Waiting for further messages')
 
   				// Based on the session state, you might want to reset the session
     				// Example:
@@ -115,10 +115,9 @@ var read = function (sender, message, passengerData, announceMsg) {
   				// Updating the user's current session state
   				// sessions[sessionId].context = context
 
-      // }).catch((err) => {
-      //   console.error('Oops! Got an error from Wit: ', err.stack || err);
-      // })
-  // }
+      }).catch((err) => {
+        console.error('Oops! Got an error from Wit: ', err.stack || err);
+      })
 }
 
 
