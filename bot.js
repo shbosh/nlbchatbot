@@ -99,7 +99,7 @@ var read = function (sender, message, passengerData, announceMsg) {
   		wit.runActions(
   			sessionId,                   // :sessionId:, the user's current session by id
   			message,                     // :text:, the user's message
-  			sessions[sessionId].context  // :context:, the user's session state
+  			// sessions[sessionId].context  // :context:, the user's session state
   		)
       // End story for now - don't update context with callbacks
       // .then(context => {
