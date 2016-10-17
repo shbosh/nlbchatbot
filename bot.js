@@ -73,14 +73,15 @@ var read = function (sender, message, passengerData, announceMsg) {
         FB.newMessage(sessionObj.fbid, "We have reached your destination. Have a great trip! We would appreciate it a lot if you can leave us some feedback.", null, quickreplies);
       }
     })
-
-  } else {
-
-    const reply = 'Hi there, how may I help you today?'
-    FB.newMessage(sender, reply)
-    .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
-
   }
+
+  // else if (message === 'hello') {
+  //
+  //   const reply = 'Hi there, how may I help you today?'
+  //   FB.newMessage(sender, reply)
+  //   .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
+  //
+  // }
   // else {
   //
   // 	// Let's find or create a session for the user
