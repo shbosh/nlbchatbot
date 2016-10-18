@@ -118,7 +118,8 @@ var read = function (sender, message, passengerData, announceMsg) {
       }).catch((err) => {
         console.error('Oops! Got an error from Wit: ', err.stack || err);
       })
-}
+    }
+ }
 
 
 
