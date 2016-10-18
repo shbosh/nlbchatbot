@@ -63,13 +63,13 @@ var actions = {
                 "elements":[
                 {
                   "title":"Information Systems Management in the Big Data Era",
-                  // "item_url":"https://petersfancybrownhats.com",
+                  "item_url":"https://petersfancybrownhats.com",
                   "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
                   "subtitle":"We\'ve got the right hat for everyone.",
                   "buttons":[
                     {
                       "type":"web_url",
-                      // "url":"https://petersfancybrownhats.com",
+                      "url":"https://petersfancybrownhats.com",
                       "title":"View Website"
                     },
                   ]
