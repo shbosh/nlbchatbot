@@ -7,7 +7,6 @@ var request = require('request')
 
 var Config = require('./config')
 var FB = require('./connectors/facebook')
-var QR = require('./connectors/QR')
 var Bot = require('./bot')
 
 // LETS MAKE A SERVER!
@@ -48,16 +47,7 @@ app.post('/webhook', function (req, res) {
     //   QR.decode(imageUrl).then(psgr => {
     //     Bot.read(entry.sender.id, null, psgr)
     //
-         const reply = `Hello Ben, are you taking a break? `
-     const quickreplies =[
-           {"content_type":"text","title":"Yes, that is me","payload":"Yes, that's me"},
-           {"content_type":"text","title":"No, that is not me.","payload":"No."}
-         ]
-
-        FB.newMessage(entry.sender.id, reply, null, quickreplies)
-      // })
-  } else{
-
+  
       Bot.read(entry.sender.id, entry.message.text)
     //
   }
