@@ -91,13 +91,7 @@ var actions = {
           .then(() => null).catch(errorHandler)
         }
 
-        // send restricted items picture
-        if(resText.substring(0,12) === "Reserve book") {
-          const restrictedtext = "https://www.singaporeair.com/en_UK/us/travel-info/baggage/baggage-restrictions/saar5/images/travel-info/baggages/prohibited-items.jpg";
-          FB.newMessage(recipientId, restric, true)
-          .then(() => null).catch(errorHandler)
-        }
-
+				delete context.borrowrequest
         if(quickreplies){
           var mapquickreplies = quickreplies.map(reply => {
             return {"content_type":"text", "title": reply, "payload": reply}
@@ -113,6 +107,7 @@ var actions = {
     } else {
       console.error('Oops! Couldn\'t find user for session:', sessionId);
       // Giving the wheel back to our bot
+			delete context.borrowrequest
       return Promise.resolve()
     }
   },
