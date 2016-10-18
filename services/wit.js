@@ -42,7 +42,7 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, rawrequest} = context;
+        const {faq, rawrequest, feedback, rating} = context;
         const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
         if(key)
@@ -161,23 +161,6 @@ var actions = {
 			context.cat = category
 		}
 
-    // Retrieve the rating
-    var rating = firstEntityValue(entities, 'rating')
-    if (rating) {
-      context.rating = parseInt(text)
-    }
-
-    // Check for faq
-    var faq = firstEntityValue(entities, 'faq')
-    if (faq) {
-      context.faq = text
-    }
-
-    // Check for feedback
-    var feedback = firstEntityValue(entities, 'feedback')
-    if (feedback) {
-      context.feedback = text
-    }
 
 		// Retrieve the sentiment
 		var sentiment = firstEntityValue(entities, 'sentiment')
