@@ -69,7 +69,7 @@ var actions = {
                   "buttons":[
                     {
                       "type":"web_url",
-                      // "url":"https://petersfancybrownhats.com",
+                       "url":"https://petersfancybrownhats.com",
                       "title":"Reserve book"
                     },
                   ]
@@ -82,7 +82,7 @@ var actions = {
                   "buttons":[
                     {
                       "type":"postback",
-                      // "url":"https://petersfancybrownhats.com",
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD"
                       "title":"Reserve book"
                     },
                   ]
