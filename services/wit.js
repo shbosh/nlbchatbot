@@ -42,54 +42,53 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, borrowrequest, feedback, rating} = context;
-        const key = faq ? 'faq' : borrowrequest ? 'borrowrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
+        const {faq, rawrequest, feedback, rating} = context;
+        const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
 
         // send template picture
-        // if(context.borrowrequest) {
-				//
-        //   const message = {
-        //     "attachment":{
-        //       "type":"template",
-        //       "payload":{
-        //         "template_type":"generic",
-        //         "elements":[
-        //         {
-        //           "title":"Information Systems Management in the Big Data Era",
-        //           "item_url":"http://www.nlb.gov.sg/",
-        //           "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
-        //           "subtitle":"Big data in the modern world",
-        //           "buttons":[
-        //             {
-				// 							"type":"postback",
-        //               "payload": "DEVELOPER_DEFINED_PAYLOAD",
-        //               "title":"Reserve book"
-        //             },
-        //           ]
-        //         },
-        //         {
-        //           "title":"Modern Information Systems",
-        //           "item_url":"http://www.nlb.gov.sg/",
-        //           "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
-        //           "subtitle":"Importance of Information Systems today",
-        //           "buttons":[
-        //             {
-        //               "type":"postback",
-        //               "payload": "DEVELOPER_DEFINED_PAYLOAD",
-        //               "title":"Reserve book"
-        //             },
-        //           ]
-        //         },
-				//
-        //         ]
-        //       }
-        //     }
-        //   }
+        if(context.request) {
+
+          const message = {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Information Systems Management in the Big Data Era",
+                  "item_url":"https://petersfancybrownhats.com",
+                  "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
+                  "subtitle":"Big data in the modern world",
+                  "buttons":[
+                    {
+											"type":"postback",
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
+                      "title":"Reserve book"
+                    },
+                  ]
+                },
+                {
+                  "title":"Modern Information Systems",
+                  "item_url":"https://petersfancybrownhats.com",
+                  "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
+                  "subtitle":"Importance of Information Systems today",
+                  "buttons":[
+                    {
+                      "type":"postback",
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
+                      "title":"Reserve book"
+                    },
+                  ]
+                },
+
+                ]
+              }
+            }
+          }
           FB.newMessage(recipientId, null, null, null, null)
-        //   .then(() => null).catch(errorHandler)
-				// 	delete context.borrowrequest
-        // }
+          .then(() => null).catch(errorHandler)
+        }
 
         // // send restricted items picture
         // if(resText.substring(0,33) === "Please check the prohibited items") {
@@ -117,6 +116,8 @@ var actions = {
     }
   },
 
+
+
   // Merge action as found on wit.ai story, returns a js promise with new context
 	merge({sessionId, context, entities, text}) {
     console.log(`Session ${sessionId} received`);
@@ -143,9 +144,9 @@ var actions = {
 		// }
 
 		// Retrieve Requests
-		var request = firstEntityValue(entities, 'borrowrequest')
-		if (request) {
-			context.borrowrequest = request
+		var borrowrequest = firstEntityValue(entities, 'borrowrequest')
+		if (borrowrequest) {
+			context.rawrequest = borrowrequest
 		}
 
 		// Retrieve the category
@@ -180,7 +181,7 @@ var actions = {
 
 
 	['push-request']({sessionId, context, text}) {
-		context.request = text;
+		context.borrowrequest = text;
 		console.log(context);
     return Promise.resolve(context);
 	},
