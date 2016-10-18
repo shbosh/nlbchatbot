@@ -42,11 +42,7 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, rawrequest, feedback, rating} = context;
-        console.log('faq', faq)
-        console.log('rawrequest', rawrequest)
-        console.log('feedback', feedback)
-        console.log('rating', rating)
+        const {faq, rawrequest} = context;
         const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
         if(key)
@@ -97,12 +93,12 @@ var actions = {
 					delete context.request
         }
 
-        // send restricted items picture
-        if(resText.substring(0,33) === "Please check the prohibited items") {
-          const restrictedPic = "https://www.singaporeair.com/en_UK/us/travel-info/baggage/baggage-restrictions/saar5/images/travel-info/baggages/prohibited-items.jpg";
-          FB.newMessage(recipientId, restrictedPic, true)
-          .then(() => null).catch(errorHandler)
-        }
+        // // send restricted items picture
+        // if(resText.substring(0,33) === "Please check the prohibited items") {
+        //   const restrictedPic = "https://www.singaporeair.com/en_UK/us/travel-info/baggage/baggage-restrictions/saar5/images/travel-info/baggages/prohibited-items.jpg";
+        //   FB.newMessage(recipientId, restrictedPic, true)
+        //   .then(() => null).catch(errorHandler)
+        // }
 
         if(quickreplies){
           var mapquickreplies = quickreplies.map(reply => {
