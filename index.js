@@ -48,7 +48,7 @@ app.post('/webhook', function (req, res) {
     //   QR.decode(imageUrl).then(psgr => {
     //     Bot.read(entry.sender.id, null, psgr)
     //
-         const reply = `Hello ${psgr.fullName}, are you taking ${psgr.airline} (${psgr.airlineCode + ' ' + psgr.flightNum}, Booking Ref: ${psgr.bookingRef}) from ${psgr.from} to ${psgr.to}? `
+         const reply = `Hello Ben, are you taking a break? `
      const quickreplies =[
            {"content_type":"text","title":"Yes, that is me","payload":"Yes, that's me"},
            {"content_type":"text","title":"No, that is not me.","payload":"No."}
