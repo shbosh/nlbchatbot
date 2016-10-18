@@ -49,7 +49,7 @@ var actions = {
           Dashboard.newMessage(recipientId, resText, context, key);
 
         // send template picture
-        if(context.request) {
+        if(context.borrowrequest) {
 
           const message = {
             "attachment":{
@@ -90,7 +90,7 @@ var actions = {
           }
           FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
-					delete context.request
+					delete context.borrowrequest
         }
 
         // // send restricted items picture
@@ -150,7 +150,7 @@ var actions = {
 		// }
 
 		// Retrieve Requests
-		var request = firstEntityValue(entities, 'request')
+		var request = firstEntityValue(entities, 'borrowrequest')
 		if (request) {
 			context.rawrequest = request
 		}
@@ -186,42 +186,7 @@ var actions = {
 
   },
 
-	// list of functions Wit.ai can execute
-	['fetch-weather']({sessionId, context}) {
-		// Here we can place an API call to a weather service
-    console.log('context ', context);
-		if (context.loc) {
-      return new Promise((resolve, reject) => {
-  			getWeather(context.loc) // loc is the property given in the wit.ai story
-        .then(function (forecast) {
-          context.forecast = forecast || 'I\'m unsure of the weather'
-          console.log('forecast ', forecast)
-          resolve(context);
-        })
-        .catch(function (err) {
-         // console.log(err)
-         reject(err)
-        })
-      })
-		}
 
-	},
-
-	['fetch-departureTime']({sessionId, context}) {
-		var departTime = " 9.40 pm"
-		context.timeToDeparture = departTime
-    return Promise.resolve(context);
-
-	},
-
-	['fetch-luggagelimit']({sessionId, context}) {
-		var lugg = "50kg"
-    console.log(context)
-    context.luggagelim = lugg
-		context.passengerClass = context.passengerData.flightClass
-    return Promise.resolve(context);
-
-	},
 	['push-request']({sessionId, context, text}) {
 		context.request = text;
 		console.log(context);
