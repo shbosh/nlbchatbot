@@ -55,7 +55,7 @@ app.post('/webhook', function (req, res) {
          ]
 
         FB.newMessage(entry.sender.id, reply, null, quickreplies)
-      })
+      // })
     } else
     //
     // } else {
