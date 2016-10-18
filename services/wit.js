@@ -170,11 +170,11 @@ var actions = {
 		console.log(error.message)
 	},
 
-  verified({sessionId, context, text, entities}) {
+  reservation({sessionId, context, text, entities}) {
 
-    var ver = firstEntityValue(entities, 'VERIFIED')
-    if (ver) {
-      context.ver = ver
+    var reserva = firstEntityValue(entities, 'RESERVATION')
+    if (reserva) {
+      context.reserva = reserva
     }
     return Promise.resolve(context);
 
