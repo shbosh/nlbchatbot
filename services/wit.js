@@ -62,28 +62,28 @@ var actions = {
                 "template_type":"generic",
                 "elements":[
                 {
-                  "title":"Welcome to Peter\'s Hats",
-                  "item_url":"https://petersfancybrownhats.com",
-                  "image_url":"http://www.thinkgeek.com/images/products/zoom/11af_4th_doctors_hat.jpg",
-                  "subtitle":"We\'ve got the right hat for everyone.",
+                  "title":"Information Systems Management in the Big Data Era",
+                  // "item_url":"https://petersfancybrownhats.com",
+                  "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
+                  //"subtitle":"We\'ve got the right hat for everyone.",
                   "buttons":[
                     {
                       "type":"web_url",
-                      "url":"https://petersfancybrownhats.com",
-                      "title":"View Website"
+                      // "url":"https://petersfancybrownhats.com",
+                      "title":"Borrow book"
                     },
                   ]
                 },
                 {
-                  "title":"Welcome to Peter\'s Hats",
-                  "item_url":"https://petersfancybrownhats.com",
-                  "image_url":"http://www.projectmanagement.com/design/hat.jpg",
-                  "subtitle":"We\'ve got the right shirts for everyone.",
+                  "title":"Modern Information Systems",
+                  // "item_url":"https://petersfancybrownhats.com",
+                  "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
+                  //"subtitle":"We\'ve got the right shirts for everyone.",
                   "buttons":[
                     {
                       "type":"web_url",
-                      "url":"https://petersfancybrownhats.com",
-                      "title":"View Website"
+                      // "url":"https://petersfancybrownhats.com",
+                      "title":"Borrow book"
                     },
                   ]
                 },
@@ -272,19 +272,7 @@ if (require.main === module) {
 	client.interactive()
 }
 
-// GET WEATHER FROM API
-var getWeather = function (location) {
-	return new Promise(function (resolve, reject) {
-		var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + Config.OPEN_WEATHER_API_KEY + '&units=metric'
-		request(url, function (error, response, body) {
-		    if (!error && response.statusCode == 200) {
-		    	var jsonData = JSON.parse(body)
-		    	var forecast = jsonData.weather ? (jsonData.weather[0].description + ', ' +jsonData.main.temp)  : null;
-		      resolve(forecast);
-		    }
-			})
-	})
-}
+
 
 // CHECK IF URL IS AN IMAGE FILE
 var checkURL = function (url) {
