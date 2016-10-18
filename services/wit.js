@@ -63,27 +63,27 @@ var actions = {
                 "elements":[
                 {
                   "title":"Information Systems Management in the Big Data Era",
-                  "item_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
+                  // "item_url":"https://petersfancybrownhats.com",
                   "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
-                  //"subtitle":"We\'ve got the right hat for everyone.",
+                  "subtitle":"We\'ve got the right hat for everyone.",
                   "buttons":[
                     {
                       "type":"web_url",
                       // "url":"https://petersfancybrownhats.com",
-                      "title":"Borrow book"
+                      "title":"View Website"
                     },
                   ]
                 },
                 {
-                  "title":"Modern Information Systems",
-                  "item_url":"http://cdn.intechopen.com/books/images/2330.jpg",
+                  "title":"Welcome to Peter\'s Hats",
+                  "item_url":"https://petersfancybrownhats.com",
                   "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
-                  //"subtitle":"We\'ve got the right shirts for everyone.",
+                  "subtitle":"We\'ve got the right shirts for everyone.",
                   "buttons":[
                     {
                       "type":"web_url",
-                      // "url":"https://petersfancybrownhats.com",
-                      "title":"Borrow book"
+                      "url":"https://petersfancybrownhats.com",
+                      "title":"View Website"
                     },
                   ]
                 },
