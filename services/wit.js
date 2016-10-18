@@ -82,7 +82,7 @@ var actions = {
                   "buttons":[
                     {
                       "type":"postback",
-                      "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
                       "title":"Reserve book"
                     },
                   ]
