@@ -38,7 +38,7 @@ app.post('/webhook', function (req, res) {
 
   var entry = FB.getMessageEntry(req.body)
   //IS THE ENTRY A VALID MESSAGE?
-  if (entry) {
+  if (entry && entry.message) {
     // if (entry.message.attachments) {
     //
     //   // GET IMAGE OF QR CODE & DECODE
@@ -47,7 +47,7 @@ app.post('/webhook', function (req, res) {
     //   QR.decode(imageUrl).then(psgr => {
     //     Bot.read(entry.sender.id, null, psgr)
     //
-  
+
       Bot.read(entry.sender.id, entry.message.text)
     //
   }
