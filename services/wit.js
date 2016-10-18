@@ -86,6 +86,7 @@ var actions = {
               }
             }
           }
+					delete context.borrowrequest
           FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
         }
