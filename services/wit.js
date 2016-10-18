@@ -94,6 +94,7 @@ var actions = {
           }
           FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
+					delete context.request
         }
 
         // send restricted items picture
