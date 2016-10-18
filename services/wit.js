@@ -86,7 +86,7 @@ var actions = {
               }
             }
           }
-          FB.newMessage(recipientId, null, null, null, null)
+          FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
         }
 
