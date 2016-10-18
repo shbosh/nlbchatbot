@@ -91,12 +91,12 @@ var actions = {
           .then(() => null).catch(errorHandler)
         }
 
-        // // send restricted items picture
-        // if(resText.substring(0,33) === "Please check the prohibited items") {
-        //   const restrictedPic = "https://www.singaporeair.com/en_UK/us/travel-info/baggage/baggage-restrictions/saar5/images/travel-info/baggages/prohibited-items.jpg";
-        //   FB.newMessage(recipientId, restrictedPic, true)
-        //   .then(() => null).catch(errorHandler)
-        // }
+        // send restricted items picture
+        if(resText.substring(0,12) === "Reserve book") {
+          const restrictedtext = "We have reserved the book for you. Please collect it within 5 days. Thank you.";
+          FB.newMessage(recipientId, restrictedtext, true)
+          .then(() => null).catch(errorHandler)
+        }
 
         if(quickreplies){
           var mapquickreplies = quickreplies.map(reply => {
