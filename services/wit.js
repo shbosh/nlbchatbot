@@ -45,53 +45,51 @@ var actions = {
         const {faq, borrowrequest, feedback, rating} = context;
         const key = faq ? 'faq' : borrowrequest ? 'borrowrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
-        if(key)
-          Dashboard.newMessage(recipientId, resText, context, key);
 
         // send template picture
-        if(context.borrowrequest) {
-
-          const message = {
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"Information Systems Management in the Big Data Era",
-                  "item_url":"http://www.nlb.gov.sg/",
-                  "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
-                  "subtitle":"Big data in the modern world",
-                  "buttons":[
-                    {
-											"type":"postback",
-                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
-                      "title":"Reserve book"
-                    },
-                  ]
-                },
-                {
-                  "title":"Modern Information Systems",
-                  "item_url":"http://www.nlb.gov.sg/",
-                  "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
-                  "subtitle":"Importance of Information Systems today",
-                  "buttons":[
-                    {
-                      "type":"postback",
-                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
-                      "title":"Reserve book"
-                    },
-                  ]
-                },
-
-                ]
-              }
-            }
-          }
+        // if(context.borrowrequest) {
+				//
+        //   const message = {
+        //     "attachment":{
+        //       "type":"template",
+        //       "payload":{
+        //         "template_type":"generic",
+        //         "elements":[
+        //         {
+        //           "title":"Information Systems Management in the Big Data Era",
+        //           "item_url":"http://www.nlb.gov.sg/",
+        //           "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
+        //           "subtitle":"Big data in the modern world",
+        //           "buttons":[
+        //             {
+				// 							"type":"postback",
+        //               "payload": "DEVELOPER_DEFINED_PAYLOAD",
+        //               "title":"Reserve book"
+        //             },
+        //           ]
+        //         },
+        //         {
+        //           "title":"Modern Information Systems",
+        //           "item_url":"http://www.nlb.gov.sg/",
+        //           "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
+        //           "subtitle":"Importance of Information Systems today",
+        //           "buttons":[
+        //             {
+        //               "type":"postback",
+        //               "payload": "DEVELOPER_DEFINED_PAYLOAD",
+        //               "title":"Reserve book"
+        //             },
+        //           ]
+        //         },
+				//
+        //         ]
+        //       }
+        //     }
+        //   }
           FB.newMessage(recipientId, null, null, null, message)
-          .then(() => null).catch(errorHandler)
-					delete context.borrowrequest
-        }
+        //   .then(() => null).catch(errorHandler)
+				// 	delete context.borrowrequest
+        // }
 
         // // send restricted items picture
         // if(resText.substring(0,33) === "Please check the prohibited items") {
@@ -137,11 +135,6 @@ var actions = {
 		// Reset the cutepics story
 		delete context.pics
 
-		//Retrieve time
-		var time = firstEntityValue(entities, 'intent')
-		if (time) {
-			context.time = time
-		}
 
 		// //Inflight Requests
 		// var time = firstEntityValue(entities, 'intent')
@@ -160,7 +153,6 @@ var actions = {
 		if (category) {
 			context.cat = category
 		}
-
 
 		// Retrieve the sentiment
 		var sentiment = firstEntityValue(entities, 'sentiment')
