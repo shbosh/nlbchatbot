@@ -65,25 +65,25 @@ var actions = {
                   "title":"Information Systems Management in the Big Data Era",
                   "item_url":"https://petersfancybrownhats.com",
                   "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
-                  "subtitle":"We\'ve got the right hat for everyone.",
+                  "subtitle":"Big data in the modern world",
                   "buttons":[
                     {
                       "type":"web_url",
                       "url":"https://petersfancybrownhats.com",
-                      "title":"View Website"
+                      "title":"Borrow book"
                     },
                   ]
                 },
                 {
-                  "title":"Welcome to Peter\'s Hats",
+                  "title":"Modern Information Systems",
                   "item_url":"https://petersfancybrownhats.com",
                   "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
-                  "subtitle":"We\'ve got the right shirts for everyone.",
+                  "subtitle":"Importance of Information Systems today",
                   "buttons":[
                     {
                       "type":"web_url",
                       "url":"https://petersfancybrownhats.com",
-                      "title":"View Website"
+                      "title":"Borrow book"
                     },
                   ]
                 },
