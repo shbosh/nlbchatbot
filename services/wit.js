@@ -93,8 +93,8 @@ var actions = {
 
         // send restricted items picture
         if(resText.substring(0,12) === "Reserve book") {
-          const restrictedtext = "We have reserved the book for you. Please collect it within 5 days. Thank you.";
-          FB.newMessage(recipientId, restrictedtext, true)
+          const restrictedtext = "https://www.singaporeair.com/en_UK/us/travel-info/baggage/baggage-restrictions/saar5/images/travel-info/baggages/prohibited-items.jpg";
+          FB.newMessage(recipientId, restric, true)
           .then(() => null).catch(errorHandler)
         }
 
@@ -126,7 +126,7 @@ var actions = {
     console.log(`Wit extracted ${JSON.stringify(entities)}`);
 
 		// Reset the weather story
-		delete context.request
+		delete context.borrowrequest
 
 		// Retrive the location entity and store it in the context field
 		var loc = firstEntityValue(entities, 'location')
@@ -170,11 +170,11 @@ var actions = {
 		console.log(error.message)
 	},
 
-  reservation({sessionId, context, text, entities}) {
+  verified({sessionId, context, text, entities}) {
 
-    var reserva = firstEntityValue(entities, 'RESERVATION')
-    if (reserva) {
-      context.reserva = reserva
+    var ver = firstEntityValue(entities, 'VERIFIED')
+    if (ver) {
+      context.ver = ver
     }
     return Promise.resolve(context);
 
