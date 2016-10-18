@@ -46,8 +46,7 @@ var read = function (sender, message, announceMsg) {
     FB.newMessage(sender, reply)
     .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
 
-  }
-  else {
+  } else {
 
   	// Let's find or create a session for the user
     var sessionId = findOrCreateSession(sender)
@@ -64,7 +63,7 @@ var read = function (sender, message, announceMsg) {
   		wit.runActions(
   			sessionId,                   // :sessionId:, the user's current session by id
   			message                     // :text:, the user's message
-  			// sessions[sessionId].context  // :context:, the user's session state
+  			sessions[sessionId].context  // :context:, the user's session state
   		)
       // End story for now - don't update context with callbacks
       .then(context => {
