@@ -63,7 +63,7 @@ var actions = {
                 "elements":[
                 {
                   "title":"Information Systems Management in the Big Data Era",
-                  "item_url":"https://nlblogin.com",
+                  "item_url":"http://www.nlb.gov.sg/",
                   "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
                   "subtitle":"Big data in the modern world",
                   "buttons":[
@@ -76,7 +76,7 @@ var actions = {
                 },
                 {
                   "title":"Modern Information Systems",
-                  "item_url":"https://nlblogin.com",
+                  "item_url":"http://www.nlb.gov.sg/",
                   "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
                   "subtitle":"Importance of Information Systems today",
                   "buttons":[
