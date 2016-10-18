@@ -69,8 +69,8 @@ var actions = {
                   "buttons":[
                     {
                       "type":"web_url",
-                      "url":"https://petersfancybrownhats.com",
-                      "title":"Borrow book"
+                      // "url":"https://petersfancybrownhats.com",
+                      "title":"Reserve book"
                     },
                   ]
                 },
@@ -81,9 +81,9 @@ var actions = {
                   "subtitle":"Importance of Information Systems today",
                   "buttons":[
                     {
-                      "type":"web_url",
-                      "url":"https://petersfancybrownhats.com",
-                      "title":"Borrow book"
+                      "type":"postback",
+                      // "url":"https://petersfancybrownhats.com",
+                      "title":"Reserve book"
                     },
                   ]
                 },
