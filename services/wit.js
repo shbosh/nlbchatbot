@@ -47,7 +47,7 @@ var actions = {
         console.log('key', key);
 
         // send template picture
-        if(resText.substring(0, 33) === "Here are some books we recommend.") {
+        if(context.borrowrequest === "I want to borrow books") {
 
           const message = {
             "attachment":{
