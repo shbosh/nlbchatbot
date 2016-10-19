@@ -86,12 +86,12 @@ var actions = {
               }
             }
           }
+					delete context.rawrequest
 					delete context.borrowrequest
           FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
         }
 
-				delete context.borrowrequest
         if(quickreplies){
           var mapquickreplies = quickreplies.map(reply => {
             return {"content_type":"text", "title": reply, "payload": reply}
@@ -108,6 +108,7 @@ var actions = {
       console.error('Oops! Couldn\'t find user for session:', sessionId);
       // Giving the wheel back to our bot
 			delete context.borrowrequest
+			delete context.rawrequest
       return Promise.resolve()
     }
   },
@@ -165,15 +166,6 @@ var actions = {
 		console.log(error.message)
 	},
 
-  verified({sessionId, context, text, entities}) {
-
-    var ver = firstEntityValue(entities, 'VERIFIED')
-    if (ver) {
-      context.ver = ver
-    }
-    return Promise.resolve(context);
-
-  },
 
 
 	['push-request']({sessionId, context, text}) {
