@@ -44,7 +44,6 @@ var actions = {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
         const {rawrequest} = context;
 				console.log('rawrequest', rawrequest)
-        const key = rawrequest ? 'rawrequest'
 
         // send template picture
         if(context.borrowrequest) {
