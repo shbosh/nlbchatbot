@@ -42,12 +42,13 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, rawrequest, feedback, rating, borrowrequest} = context;
-        const key = faq ? 'faq' : borrowrequest ? 'borrowrequest' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
+        const {faq, rawrequest, feedback, rating} = context;
+        const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
 
         // send template picture
         if(context.borrowrequest === "I want to borrow books") {
+
 
           const message = {
             "attachment":{
