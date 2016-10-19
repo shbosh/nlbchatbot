@@ -115,7 +115,7 @@ var actions = {
 		}
 
 		// Reset the cutepics story
-		delete context.pics
+		delete context.borrowrequest
 
 
 		// //Inflight Requests
