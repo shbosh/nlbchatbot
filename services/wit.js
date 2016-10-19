@@ -47,7 +47,7 @@ var actions = {
         console.log('key', key);
 
         // send template picture
-        if(context.borrowrequest) {
+        if(resText.substring(0, 33) === "Here are some books we recommend.") {
 
           const message = {
             "attachment":{
@@ -108,8 +108,6 @@ var actions = {
     } else {
       console.error('Oops! Couldn\'t find user for session:', sessionId);
       // Giving the wheel back to our bot
-			delete context.borrowrequest
-			delete context.rawrequest
       return Promise.resolve()
     }
   },
