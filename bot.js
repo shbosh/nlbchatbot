@@ -37,8 +37,11 @@ var findOrCreateSession = function (fbid) {
 
 var read = function (sender, message, announceMsg) {
 
-  if(sender === Config.FB_PAGE_ID)
-    return
+  if(sender === Config.FB_PAGE_ID) {
+    const reply = 'Hi there, how may I help you today?'
+    FB.newMessage(sender, reply)
+    .then(() => null).catch(err => console.error( 'Error messaging', sender, ':', err.stack || err ))
+  }
 
   if (message === 'hello') {
 
