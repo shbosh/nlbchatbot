@@ -60,26 +60,12 @@ var actions = {
                   "item_url":"https://petersfancybrownhats.com",
                   "image_url":"https://images.springer.com/sgw/books/medium/9783319135021.jpg",
                   "subtitle":"Big data in the modern world",
-                  "buttons":[
-                    {
-											"type":"postback",
-                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
-                      "title":"Reserve book"
-                    },
-                  ]
                 },
                 {
                   "title":"Modern Information Systems",
                   "item_url":"https://petersfancybrownhats.com",
                   "image_url":"http://cdn.intechopen.com/books/images/2330.jpg",
                   "subtitle":"Importance of Information Systems today",
-                  "buttons":[
-                    {
-                      "type":"postback",
-                      "payload": "DEVELOPER_DEFINED_PAYLOAD",
-                      "title":"Reserve book"
-                    },
-                  ]
                 },
 
                 ]
