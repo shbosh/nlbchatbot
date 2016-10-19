@@ -47,7 +47,7 @@ var actions = {
         console.log('key', key);
 
         // send template picture
-        if(context.borrowrequest && context.reservebook) {
+        if(context.borrowrequest) {
 
           const message = {
             "attachment":{
