@@ -47,7 +47,7 @@ var actions = {
         const key = rawrequest ? 'rawrequest'
 
         // send template picture
-        if(context.borrowrequest === "I want to borrow books") {
+        if(context.borrowrequest) {
 
 
           const message = {
