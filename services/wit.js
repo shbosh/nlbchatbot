@@ -42,8 +42,8 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, rawrequest, feedback, rating} = context;
-        const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
+        const {faq, rawrequest, feedback, rating, borrowrequest} = context;
+        const key = faq ? 'faq' : borrowrequest ? 'borrowrequest' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
         console.log('key', key);
 
         // send template picture
@@ -122,7 +122,6 @@ var actions = {
     console.log(`Wit extracted ${JSON.stringify(entities)}`);
 
 		// Reset the weather story
-		delete context.borrowrequest
 
 		// Retrive the location entity and store it in the context field
 		var loc = firstEntityValue(entities, 'location')
