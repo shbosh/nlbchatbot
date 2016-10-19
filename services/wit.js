@@ -42,9 +42,9 @@ var actions = {
 
       } else {
         // const sentiment = Math.floor(Math.random()) == 1 ? 'positive' : 'negative';
-        const {faq, rawrequest, feedback, rating} = context;
-        const key = faq ? 'faq' : rawrequest ? 'rawrequest' : feedback ? 'feedback' : rating ? 'rating' : null;
-        console.log('key', key);
+        const {rawrequest} = context;
+				console.log('rawrequest', rawrequest)
+        const key = rawrequest ? 'rawrequest';
 
         // send template picture
         if(context.borrowrequest === "I want to borrow books") {
@@ -73,20 +73,18 @@ var actions = {
               }
             }
           }
-					delete context.rawrequest
-					delete context.borrowrequest
 					console.log('borrowrequest', context.borrowrequest)
           FB.newMessage(recipientId, null, null, null, message)
           .then(() => null).catch(errorHandler)
         }
 
-        // if(quickreplies){
-        //   var mapquickreplies = quickreplies.map(reply => {
-        //     return {"content_type":"text", "title": reply, "payload": reply}
-        //   });
-        //   console.log(mapquickreplies)
-        //   return FB.newMessage(recipientId, resText, null, mapquickreplies).then(() => null).catch(errorHandler)
-        // }
+        if(quickreplies){
+          var mapquickreplies = quickreplies.map(reply => {
+            return {"content_type":"text", "title": reply, "payload": reply}
+          });
+          console.log(mapquickreplies)
+          return FB.newMessage(recipientId, resText, null, mapquickreplies).then(() => null).catch(errorHandler)
+        }
 
         return FB.newMessage(recipientId, resText)
         .then(() => null).catch(errorHandler)
