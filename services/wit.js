@@ -47,7 +47,7 @@ var actions = {
         console.log('key', key);
 
         // send template picture
-        if(context.borrowrequest) {
+        if(context.borrowrequest && context.reservebook) {
 
           const message = {
             "attachment":{
@@ -92,13 +92,13 @@ var actions = {
           .then(() => null).catch(errorHandler)
         }
 
-        if(quickreplies){
-          var mapquickreplies = quickreplies.map(reply => {
-            return {"content_type":"text", "title": reply, "payload": reply}
-          });
-          console.log(mapquickreplies)
-          return FB.newMessage(recipientId, resText, null, mapquickreplies).then(() => null).catch(errorHandler)
-        }
+        // if(quickreplies){
+        //   var mapquickreplies = quickreplies.map(reply => {
+        //     return {"content_type":"text", "title": reply, "payload": reply}
+        //   });
+        //   console.log(mapquickreplies)
+        //   return FB.newMessage(recipientId, resText, null, mapquickreplies).then(() => null).catch(errorHandler)
+        // }
 
         return FB.newMessage(recipientId, resText)
         .then(() => null).catch(errorHandler)
